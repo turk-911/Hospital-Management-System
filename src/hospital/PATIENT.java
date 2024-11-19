@@ -35,7 +35,6 @@ public class PATIENT extends javax.swing.JFrame {
 
     }
 
-    @SuppressWarnings("unchecked")
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();

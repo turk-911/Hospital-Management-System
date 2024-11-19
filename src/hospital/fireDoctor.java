@@ -1,17 +1,14 @@
 package hospital;
-
 import java.awt.Color;
 import java.awt.Cursor;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.table.DefaultTableModel;
-
 
 public class fireDoctor extends javax.swing.JFrame {
 
@@ -26,17 +23,16 @@ public class fireDoctor extends javax.swing.JFrame {
         fire.setCursor(new Cursor(Cursor.HAND_CURSOR));
         back.setCursor(new Cursor(Cursor.HAND_CURSOR));
         logout.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        
-         UIManager.put("OptionPane.background", new ColorUIResource(new Color(0, 128, 128))); 
+
+        UIManager.put("OptionPane.background", new ColorUIResource(new Color(0, 128, 128)));
         UIManager.put("Panel.background", new ColorUIResource(new Color(0, 128, 128)));
-        
+
         UIManager.put("OptionPane.messageForeground", new ColorUIResource(Color.WHITE));
-        
+
         UIManager.put("Button.background", new ColorUIResource(Color.BLACK));
         UIManager.put("Button.foreground", new ColorUIResource(Color.RED));
     }
 
-    @SuppressWarnings("unchecked")
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -51,11 +47,11 @@ public class fireDoctor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); 
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24));
         jLabel1.setText("Fire Doctor");
 
         record.setBackground(new java.awt.Color(0, 153, 102));
-        record.setFont(new java.awt.Font("Cambria", 1, 14)); 
+        record.setFont(new java.awt.Font("Cambria", 1, 14));
         record.setForeground(new java.awt.Color(255, 255, 255));
         record.setText("View Record");
         record.addActionListener(new java.awt.event.ActionListener() {
@@ -65,22 +61,23 @@ public class fireDoctor extends javax.swing.JFrame {
         });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Id", "Doctor Name", "Specialization"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                new Object[][] {
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null }
+                },
+                new String[] {
+                        "Id", "Doctor Name", "Specialization"
+                }) {
+            @SuppressWarnings("rawtypes")
+            Class[] types = new Class[] {
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
+            @SuppressWarnings({ "rawtypes", "unchecked" })
             public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+                return types[columnIndex];
             }
         });
         jScrollPane1.setViewportView(jTable1);
@@ -88,7 +85,7 @@ public class fireDoctor extends javax.swing.JFrame {
         jLabel2.setText("To Fire the doctor, Write his Id :");
 
         fire.setBackground(new java.awt.Color(204, 0, 51));
-        fire.setFont(new java.awt.Font("Cambria", 1, 14)); 
+        fire.setFont(new java.awt.Font("Cambria", 1, 14));
         fire.setForeground(new java.awt.Color(255, 255, 255));
         fire.setText("Fire");
         fire.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +95,7 @@ public class fireDoctor extends javax.swing.JFrame {
         });
 
         back.setBackground(new java.awt.Color(102, 153, 255));
-        back.setFont(new java.awt.Font("Cambria", 1, 14)); 
+        back.setFont(new java.awt.Font("Cambria", 1, 14));
         back.setForeground(new java.awt.Color(255, 255, 255));
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +105,7 @@ public class fireDoctor extends javax.swing.JFrame {
         });
 
         logout.setBackground(new java.awt.Color(255, 51, 51));
-        logout.setFont(new java.awt.Font("Cambria", 1, 14)); 
+        logout.setFont(new java.awt.Font("Cambria", 1, 14));
         logout.setForeground(new java.awt.Color(255, 255, 255));
         logout.setText("Logout");
         logout.addActionListener(new java.awt.event.ActionListener() {
@@ -120,51 +117,61 @@ public class fireDoctor extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(fd, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(fire)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(back)
-                                .addGap(41, 41, 41)
-                                .addComponent(logout)))
-                        .addContainerGap())
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(record))
-                        .addGap(209, 209, 209))))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jLabel2)
+                                                                .addGap(0, 0, Short.MAX_VALUE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(fd,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 112,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(fire)
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        Short.MAX_VALUE)
+                                                                .addComponent(back)
+                                                                .addGap(41, 41, 41)
+                                                                .addComponent(logout)))
+                                                .addContainerGap())
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 577,
+                                                Short.MAX_VALUE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout
+                                                .createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel1)
+                                                        .addComponent(record))
+                                                .addGap(209, 209, 209)))));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(record)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fire)
-                    .addComponent(logout)
-                    .addComponent(back))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(record)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(fd, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(fire)
+                                        .addComponent(logout)
+                                        .addComponent(back))
+                                .addContainerGap(37, Short.MAX_VALUE)));
 
         pack();
     }
@@ -174,21 +181,19 @@ public class fireDoctor extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hms", "root", "2505");
-            Statement st = conn.createStatement();
             String sql = "select * from doctor_record";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
             tm.setRowCount(0);
             while (rs.next()) {
-                Object o[] = {rs.getInt("ID"), rs.getString("DOCTORNAME"), rs.getString("SPECIALIZATION")};
+                Object o[] = { rs.getInt("ID"), rs.getString("DOCTORNAME"), rs.getString("SPECIALIZATION") };
                 tm.addRow(o);
             }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-
 
     }
 
@@ -233,9 +238,9 @@ public class fireDoctor extends javax.swing.JFrame {
                 }
             }
 
-            rs.close();  
-            checkStmt.close(); 
-            conn.close(); 
+            rs.close();
+            checkStmt.close();
+            conn.close();
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);

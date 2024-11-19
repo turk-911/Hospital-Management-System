@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
@@ -16,26 +15,25 @@ public class viewdetailDoc extends javax.swing.JFrame {
 
     public viewdetailDoc() {
         initComponents();
-        
+
         this.getContentPane().setBackground(new Color(0, 153, 153));
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        
-       jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-       jButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
-       jButton3.setCursor(new Cursor(Cursor.HAND_CURSOR));
-       
-         UIManager.put("OptionPane.background", new ColorUIResource(new Color(0, 128, 128)));
+
+        jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+        UIManager.put("OptionPane.background", new ColorUIResource(new Color(0, 128, 128)));
         UIManager.put("Panel.background", new ColorUIResource(new Color(0, 128, 128)));
-        
+
         UIManager.put("OptionPane.messageForeground", new ColorUIResource(Color.WHITE));
-        
+
         UIManager.put("Button.background", new ColorUIResource(Color.BLACK));
         UIManager.put("Button.foreground", new ColorUIResource(Color.RED));
 
     }
 
-    @SuppressWarnings("unchecked")
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -47,24 +45,23 @@ public class viewdetailDoc extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); 
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24));
         jLabel1.setText("VIEW DETAILS");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Id", "Doctor name", "Specialization"
-            }
-        ));
+                new Object[][] {
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null }
+                },
+                new String[] {
+                        "Id", "Doctor name", "Specialization"
+                }));
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 102));
-        jButton1.setFont(new java.awt.Font("Cambria", 1, 14)); 
+        jButton1.setFont(new java.awt.Font("Cambria", 1, 14));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("VIEW RECORDS");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +71,7 @@ public class viewdetailDoc extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(51, 153, 255));
-        jButton2.setFont(new java.awt.Font("Cambria", 1, 14)); 
+        jButton2.setFont(new java.awt.Font("Cambria", 1, 14));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("BACK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +81,7 @@ public class viewdetailDoc extends javax.swing.JFrame {
         });
 
         jButton3.setBackground(new java.awt.Color(255, 51, 102));
-        jButton3.setFont(new java.awt.Font("Cambria", 1, 14)); 
+        jButton3.setFont(new java.awt.Font("Cambria", 1, 14));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("LOGOUT");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -96,41 +93,43 @@ public class viewdetailDoc extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(235, 235, 235)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(260, 260, 260)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(57, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(130, 130, 130))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(235, 235, 235)
+                                                .addComponent(jLabel1))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(260, 260, 260)
+                                                .addComponent(jButton1))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(48, 48, 48)
+                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 484,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(57, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(97, 97, 97)
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton3)
+                                .addGap(130, 130, 130)));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addGap(19, 19, 19))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jButton2)
+                                        .addComponent(jButton3))
+                                .addGap(19, 19, 19)));
 
         pack();
     }
@@ -143,27 +142,27 @@ public class viewdetailDoc extends javax.swing.JFrame {
     }
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-       LoginPage obj =new LoginPage();
-       obj.setVisible(true);
-       dispose();
+        LoginPage obj = new LoginPage();
+        obj.setVisible(true);
+        dispose();
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-                 try{ Class.forName("com.mysql.cj.jdbc.Driver");
-                 Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/hms","root","2505");
-                 Statement st= conn.createStatement();
-                 String sql="select * from doctor_record";
-                PreparedStatement pstmt=conn.prepareStatement(sql);
-                ResultSet rs= pstmt.executeQuery();
-                DefaultTableModel tm=(DefaultTableModel)jTable1.getModel();
-                tm.setRowCount(0);
-                while(rs.next()){
-                Object o[]={rs.getInt("ID"),rs.getString("DOCTORNAME"),rs.getString("SPECIALIZATION")};
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hms", "root", "2505");
+            String sql = "select * from doctor_record";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
+            tm.setRowCount(0);
+            while (rs.next()) {
+                Object o[] = { rs.getInt("ID"), rs.getString("DOCTORNAME"), rs.getString("SPECIALIZATION") };
                 tm.addRow(o);
-                }
-                 }catch(Exception e){
-                     JOptionPane.showMessageDialog(null,e);
-                 }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
 
     }
 

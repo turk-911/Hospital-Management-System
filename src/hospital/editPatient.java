@@ -22,7 +22,7 @@ public class editPatient extends javax.swing.JFrame {
         Back.setCursor(new Cursor(Cursor.HAND_CURSOR));
         logout.setCursor(new Cursor(Cursor.HAND_CURSOR));
         
-         UIManager.put("OptionPane.background", new ColorUIResource(new Color(0, 128, 128)));
+        UIManager.put("OptionPane.background", new ColorUIResource(new Color(0, 128, 128)));
         UIManager.put("Panel.background", new ColorUIResource(new Color(0, 128, 128)));
         
         UIManager.put("OptionPane.messageForeground", new ColorUIResource(Color.WHITE));
@@ -32,7 +32,6 @@ public class editPatient extends javax.swing.JFrame {
 
     }
 
-    @SuppressWarnings("unchecked")
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();

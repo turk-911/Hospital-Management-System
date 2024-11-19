@@ -1,12 +1,10 @@
 package hospital;
-
 import java.awt.Color;
 import java.awt.Cursor;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -24,7 +22,7 @@ public class admitPatient extends javax.swing.JFrame {
         jButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton3.setCursor(new Cursor(Cursor.HAND_CURSOR));
         
-         UIManager.put("OptionPane.background", new ColorUIResource(new Color(0, 128, 128))); 
+        UIManager.put("OptionPane.background", new ColorUIResource(new Color(0, 128, 128))); 
         UIManager.put("Panel.background", new ColorUIResource(new Color(0, 128, 128)));
         
         UIManager.put("OptionPane.messageForeground", new ColorUIResource(Color.WHITE));
@@ -43,7 +41,6 @@ public class admitPatient extends javax.swing.JFrame {
 
     }
 
-    @SuppressWarnings("unchecked")
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();

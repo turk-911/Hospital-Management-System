@@ -32,7 +32,6 @@ public class editDoctor extends javax.swing.JFrame {
         UIManager.put("Button.foreground", new ColorUIResource(Color.RED));
     }
 
-    @SuppressWarnings("unchecked")
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();

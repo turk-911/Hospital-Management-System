@@ -32,8 +32,6 @@ public class DOCTORS extends javax.swing.JFrame {
         jButton5.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton6.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
-
-    @SuppressWarnings("unchecked")
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
